@@ -20,7 +20,7 @@ const schema = Yup.object().shape({
 
 const Auth: FC = () => {
   const { handleSubmit, register, errors } = useForm<User>({
-    validationSchema: schema,
+    resolver: yupResolver(schema),
   });
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
